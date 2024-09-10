@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Block Visionaries - SIH 2024</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#proof-of-concept">Proof of Concept</a></li>
+                <li><a href="#smart-contracts">Smart Contracts</a></li>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#supply-chain-tracking">Supply Chain Tracking</a></li>
+                <li><a href="#reputation-system">Reputation System</a></li> 
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        <p id="wallet-status-supply-chain">Wallet not connected</p> 
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Supply Block Visionaries</h1>
+                <p>Revolutionizing the global supply chain with blockchain technology</p>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>End-to-end Tracking</h3>
+                        <p>Complete visibility across the entire supply chain</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Decentralized Marketplace</h3>
+                        <p>Direct connections between shippers and carriers</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Smart Contracts</h3>
+                        <p>Automated payments, quality checks, and customs clearance</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>IoT Integration</h3>
+                        <p>Real-time monitoring of shipments</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>AI Optimization</h3>
+                        <p>Intelligent logistics planning and route optimization</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Blockchain Reputation System</h3>
+                        <p>Reliable performance metrics for service providers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proof-of-concept">
+            <div class="container">
+                <h2 class="section-title">Proof of Concept</h2>
+                <div class="timeline-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="smart-contracts" class="section">
+            <div class="container">
+                <h2>Smart Contracts</h2>
+                <div id="contract-interface">
+                    <button onclick="connectWallet()">Connect Wallet</button>
+                    <p>Connected Account: <span id="account">Not connected</span></p>
+                    <p id="wallet-status-smart-contracts">Wallet not connected</p> 
+
+                    <h3>1. Deposit Advance Payment</h3>
+                    <input type="number" id="depositAmount" placeholder="Enter amount in Ether">
+                    <button onclick="depositAdvance()">Deposit Advance Payment</button>
+
+                    <h3>2. Confirm Delivery</h3>
+                    <button onclick="confirmDelivery()">Confirm Delivery</button>
+
+                    <h3>3. Release Payment</h3>
+                    <button onclick="releasePayment()">Release Payment to Supplier</button>
+
+                    <h3>4. Refund Customer (if no delivery)</h3>
+                    <button onclick="refundCustomer()">Refund Customer</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="marketplace" class="section">
+            <div class="container">
+                <h2>Decentralized Logistics Marketplace</h2>
+                <div id="marketplace-interface">
+                    <div id="shipper-interface">
+                        <h3>Shippers: Post a Job</h3>
+                        <input type="text" id="job-description" placeholder="Job Description">
+                        <input type="number" id="job-price" placeholder="Price (in ETH)">
+                        <button onclick="postJob()">Post Job</button>
+                    </div>
+                    <div id="carrier-interface">
+                        <h3>Carriers: Available Jobs</h3>
+                        <div id="job-list"></div> 
+                    </div>
+                    <div id="smart-contract-interface">
+                        <h3>Smart Contract</h3>
+                        <p>Connected Account: <span id="connected-account">Not connected</span></p> 
+                        <p id="wallet-status">Wallet not connected</p> 
+                        <button onclick="connectWallet()">Connect Wallet</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="supply-chain-tracking" class="section">
+            <div class="container">
+                <h2>Supply Chain Tracking</h2>
+                <div id="tracking-interface">
+                    <p id="wallet-status-supply-chain">Wallet not connected</p>
+                    <div id="shipment-creation">
+                        <h3>Create New Shipment</h3>
+                        <input type="text" id="shipment-id" placeholder="Shipment ID">
+                        <input type="text" id="origin" placeholder="Origin">
+                        <input type="text" id="destination" placeholder="Destination">
+                        <button onclick="createShipment()">Create Shipment</button>
+                    </div>
+                    <div id="shipment-updates">
+                        <h3>Update Shipment Status</h3>
+                        <select id="shipment-select"></select>
+                        <select id="status-select">
+                            <option value="In Transit">In Transit</option>
+                            <option value="Customs Clearance">Customs Clearance</option>
+                            <option value="Out for Delivery">Out for Delivery</option>
+                            <option value="Delivered">Delivered</option>
+                        </select>
+                        <input type="text" id="location" placeholder="Current Location">
+                        <button onclick="updateShipmentStatus()">Update Status</button>
+                    </div>
+                    <div id="shipment-tracking">
+                        <h3>Track Shipment</h3>
+                        <select id="track-shipment-select"></select>
+                        <button onclick="trackShipment()">Track</button>
+                        <div id="shipment-status"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reputation-system" class="section">
+            <div class="container">
+                <h2>Reputation System</h2>
+                <div id="reputation-interface">
+                    <div id="rate-transaction">
+                        <h3>Rate Transaction</h3>
+                        <select id="transaction-select"></select>
+                        <select id="rating-select">
+                            <option value="5">Excellent (5)</option>
+                            <option value="4">Good (4)</option>
+                            <option value="3">Average (3)</option>
+                            <option value="2">Below Average (2)</option>
+                            <option value="1">Poor (1)</option>
+                        </select>
+                        <input type="text" id="review-text" placeholder="Write a review (optional)">
+                        <button onclick="submitRating()">Submit Rating</button>
+                    </div>
+                    <div id="view-reputation">
+                        <h3>View Reputation</h3>
+                        <input type="text" id="address-input" placeholder="Enter Ethereum address">
+                        <button onclick="viewReputation()">View Reputation</button>
+                        <div id="reputation-display"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script> 
+</body>
+</html>
