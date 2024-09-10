@@ -74,6 +74,30 @@
             </div>
         </section>
 
+         <section id="marketplace" class="section">
+            <div class="container">
+                <h2>Decentralized Logistics Marketplace</h2>
+                <div id="marketplace-interface">
+                    <div id="shipper-interface">
+                        <h3>Shippers: Post a Job</h3>
+                        <input type="text" id="job-description" placeholder="Job Description">
+                        <input type="number" id="job-price" placeholder="Price (in ETH)">
+                        <button onclick="postJob()">Post Job</button>
+                    </div>
+                    <div id="carrier-interface">
+                        <h3>Carriers: Available Jobs</h3>
+                        <div id="job-list"></div> 
+                    </div>
+                    <div id="smart-contract-interface">
+                        <h3>Smart Contract</h3>
+                        <p>Connected Account: <span id="connected-account">Not connected</span></p> 
+                        <p id="wallet-status">Wallet not connected</p> 
+                        <button onclick="connectWallet()">Connect Wallet</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="smart-contracts" class="section">
             <div class="container">
                 <h2>Smart Contracts</h2>
@@ -98,29 +122,7 @@
             </div>
         </section>
 
-        <section id="marketplace" class="section">
-            <div class="container">
-                <h2>Decentralized Logistics Marketplace</h2>
-                <div id="marketplace-interface">
-                    <div id="shipper-interface">
-                        <h3>Shippers: Post a Job</h3>
-                        <input type="text" id="job-description" placeholder="Job Description">
-                        <input type="number" id="job-price" placeholder="Price (in ETH)">
-                        <button onclick="postJob()">Post Job</button>
-                    </div>
-                    <div id="carrier-interface">
-                        <h3>Carriers: Available Jobs</h3>
-                        <div id="job-list"></div> 
-                    </div>
-                    <div id="smart-contract-interface">
-                        <h3>Smart Contract</h3>
-                        <p>Connected Account: <span id="connected-account">Not connected</span></p> 
-                        <p id="wallet-status">Wallet not connected</p> 
-                        <button onclick="connectWallet()">Connect Wallet</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+       
 
         <section id="supply-chain-tracking" class="section">
             <div class="container">
